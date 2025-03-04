@@ -23,3 +23,9 @@ class ScienceErrorState extends NewsState{
 }
 
 class ThemeModeState extends NewsState{}
+
+class SearchLoadingState extends NewsState{}
+class SearchSuccessState extends NewsState{}
+class SearchErrorState extends NewsState{
+  SearchErrorState(String error);
+}

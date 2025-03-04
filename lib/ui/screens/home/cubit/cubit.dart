@@ -6,7 +6,7 @@ import 'package:news/network/dio_helper.dart';
 import 'package:news/ui/screens/business/business_screen.dart';
 import 'package:news/ui/screens/home/cubit/states.dart';
 import 'package:news/ui/screens/science/science_screen.dart';
-import 'package:news/ui/screens/settings/settings_screen.dart';
+import 'package:news/ui/screens/settings/search_screen.dart';
 import 'package:news/ui/screens/sports/sports_screen.dart';
 
 class NewsCubit extends Cubit<NewsState>{
@@ -21,7 +21,7 @@ class NewsCubit extends Cubit<NewsState>{
     BusinessScreen(),
     SportsScreen(),
     ScienceScreen(),
-    SettingsScreen(),
+    SearchScreen(),
   ];
 
   void changeIndex(int index) {
@@ -64,4 +64,25 @@ class NewsCubit extends Cubit<NewsState>{
       emit(ThemeModeState());
     },);
   }
+
+  List<dynamic> searchList = [];
+
+  void search(String value) {
+
+    emit(SearchLoadingState());
+
+    DioHelper.getData(
+        url: 'v2/everything',
+        query: {
+          'q': value,
+          'apiKey': '49f4c18d98bd457dbdd46684642f6703'
+        }
+    ).then((value) {
+      searchList = value.data['articles'];
+      emit(SearchSuccessState());
+    },).catchError((error){
+      emit(SearchErrorState(error.toString()));
+    });
+  }
+
 }

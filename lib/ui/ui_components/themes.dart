@@ -2,7 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 ThemeData lightTheme() {
+
   return ThemeData(
+    iconTheme: IconThemeData(
+      color: Colors.black
+    ),
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: Colors.black,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      prefixIconColor: Colors.black,
+      suffixIconColor: Colors.black,
+      iconColor: Colors.black,
+      labelStyle: TextStyle(
+        color: Colors.black
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+        width: 2.0,
+        color: Colors.black
+        ),
+      ),
+    ),
     progressIndicatorTheme: ProgressIndicatorThemeData(color: Colors.black),
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: AppBarTheme(
@@ -20,12 +41,33 @@ ThemeData lightTheme() {
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       selectedItemColor: Colors.black,
-    )
+    ),
   );
 }
 
+
 ThemeData darkTheme() {
+
   return ThemeData(
+      iconTheme: IconThemeData(
+          color: Colors.white
+      ),
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: Colors.white,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        prefixIconColor: Colors.white,
+        suffixIconColor: Colors.white,
+        labelStyle: TextStyle(
+            color: Colors.white
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+              width: 2.0,
+              color: Colors.white
+          ),
+        ),
+      ),
     progressIndicatorTheme: ProgressIndicatorThemeData(color: Colors.white),
     scaffoldBackgroundColor: Colors.black,
     primaryColor: Colors.black,
@@ -42,7 +84,6 @@ ThemeData darkTheme() {
       bodyLarge: TextStyle(color: Colors.white),
       bodyMedium: TextStyle(color: Colors.white),
     ),
-    iconTheme: IconThemeData(color: Colors.white),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.black,

@@ -1,15 +1,12 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/ui/screens/home/cubit/cubit.dart';
 import 'package:news/ui/screens/home/cubit/states.dart';
+import 'package:news/ui/screens/settings/search_screen.dart';
 
 
 class NewsLayout extends StatelessWidget{
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +19,9 @@ class NewsLayout extends StatelessWidget{
           appBar: AppBar(
             actions: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  navigateTo(context, SearchScreen());
+                },
                 icon: Icon(
                     Icons.search
                 ),
@@ -65,4 +64,13 @@ class NewsLayout extends StatelessWidget{
       },
     );
   }
+}
+
+void navigateTo(context, widget) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => widget,
+    ),
+  );
 }
