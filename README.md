@@ -67,7 +67,7 @@ This app fetches news from [NewsAPI.org](https://newsapi.org/). To use the API:
 ## 📷 Screenshots
 | Home Screen | News Details |
 |-------------|-------------|
-| ![Home](https://via.placeholder.com/300) | ![Details](https://via.placeholder.com/300) |
+| ![1](../assets/a) | ![Details](https://via.placeholder.com/300)  ![Home](https://via.placeholder.com/300) | ![Details](https://via.placeholder.com/300)|
 
 ---
 
