@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/ui/screens/home/cubit/cubit.dart';
 import 'package:news/ui/screens/home/cubit/states.dart';
-import 'package:news/ui/screens/settings/search_screen.dart';
+import 'package:news/ui/screens/search/search_screen.dart';
 
 
 class NewsLayout extends StatelessWidget{

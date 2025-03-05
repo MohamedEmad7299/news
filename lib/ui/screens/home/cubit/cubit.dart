@@ -6,7 +6,7 @@ import 'package:news/network/dio_helper.dart';
 import 'package:news/ui/screens/business/business_screen.dart';
 import 'package:news/ui/screens/home/cubit/states.dart';
 import 'package:news/ui/screens/science/science_screen.dart';
-import 'package:news/ui/screens/settings/search_screen.dart';
+import 'package:news/ui/screens/search/search_screen.dart';
 import 'package:news/ui/screens/sports/sports_screen.dart';
 
 class NewsCubit extends Cubit<NewsState>{
@@ -44,13 +44,13 @@ class NewsCubit extends Cubit<NewsState>{
         query: {
           'country': 'us',
           'category': categories[currentIndex],
-          'apiKey': '49f4c18d98bd457dbdd46684642f6703'
+          'apiKey': '8c468b98a8fa49eab0f6002345025997'
         }
     ).then((value) {
       articles = value.data['articles'];
       emit(BusinessSuccessState());
     },).catchError((error) {
-      print(error.toString());
+      print( "THE ERROR :::::::::::::: $error");
       emit(BusinessErrorState(error.toString()));
     });
   }
@@ -75,7 +75,7 @@ class NewsCubit extends Cubit<NewsState>{
         url: 'v2/everything',
         query: {
           'q': value,
-          'apiKey': '49f4c18d98bd457dbdd46684642f6703'
+          'apiKey': '8c468b98a8fa49eab0f6002345025997'
         }
     ).then((value) {
       searchList = value.data['articles'];
